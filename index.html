@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSC Daily Mock Test</title>
+    <!-- Google Font: Anek Malayalam (still used for Malayalam support, but text is English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Anek Malayalam', sans-serif;
+            background: linear-gradient(135deg, #e8f0fe 0%, #d4e0f7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(26, 35, 126, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        h2 {
+            color: #1a237e;
+            font-weight: 700;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffc107, #ff6f00);
+            border-radius: 4px;
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e7f5;
+            border-radius: 16px;
+            font-size: 16px;
+            font-family: 'Anek Malayalam', sans-serif;
+            background: #f8faff;
+            transition: all 0.3s;
+            outline: none;
+            color: #1a237e;
+        }
+        .form-group input:focus {
+            border-color: #1a237e;
+            box-shadow: 0 0 0 4px rgba(26, 35, 126, 0.1);
+            background: #ffffff;
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #1a237e, #283593);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Anek Malayalam', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(26, 35, 126, 0.3);
+            margin-top: 5px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(26, 35, 126, 0.4);
+            background: linear-gradient(135deg, #0d1445, #1a237e);
+        }
+        button:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+        .btn-secondary {
+            background: linear-gradient(135deg, #ffc107, #ffb300);
+            color: #1a237e;
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+        }
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #ffb300, #ff8f00);
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #c62828, #b71c1c);
+            box-shadow: 0 8px 20px rgba(198, 40, 40, 0.3);
+        }
+        .btn-danger:hover { background: linear-gradient(135deg, #b71c1c, #880e0e); }
+        .btn-sm { width: auto; padding: 8px 24px; font-size: 15px; display: inline-block; }
+        .hidden { display: none !important; }
+        #message {
+            padding: 14px 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid transparent;
+        }
+        .error { background: #ffebee; color: #c62828; border-color: #ffcdd2; }
+        .success { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+        .info { background: #e3f2fd; color: #0d47a1; border-color: #bbdefb; }
+        .card {
+            background: linear-gradient(145deg, #ffffff, #f5f8ff);
+            padding: 20px 25px;
+            border-radius: 28px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.6), 0 8px 20px rgba(26,35,126,0.08);
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+        .card div { font-size: 22px; font-weight: 700; color: #1a237e; }
+        .card span { display: block; font-size: 15px; font-weight: 400; color: #5c6b8a; margin-top: 4px; }
+        #timer {
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+            padding: 14px 10px;
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            border-radius: 60px;
+            margin: 15px 0;
+            color: #b71c1c;
+            box-shadow: 0 4px 12px rgba(183, 28, 28, 0.1);
+        }
+        #resultStatus {
+            padding: 16px 20px;
+            border-radius: 20px;
+            margin: 10px 0;
+            text-align: center;
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            font-size: 18px;
+            font-weight: 600;
+            color: #e65100;
+        }
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #e0e7f5;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 700;
+            color: #5c6b8a;
+            border-radius: 30px 30px 0 0;
+            transition: all 0.2s;
+            font-size: 17px;
+            background: transparent;
+            border-bottom: 4px solid transparent;
+        }
+        .tab.active {
+            background: #1a237e;
+            color: white;
+            border-bottom-color: #ffc107;
+            box-shadow: 0 -4px 12px rgba(26,35,126,0.1);
+        }
+        .tab:hover:not(.active) { background: #e8edf9; color: #1a237e; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .question-box {
+            background: #fafbff;
+            padding: 18px 20px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border-left: 6px solid #1a237e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.2s;
+        }
+        .question-box:hover {
+            box-shadow: 0 4px 16px rgba(26,35,126,0.06);
+            transform: translateX(4px);
+        }
+        .question-box p { font-weight: 600; font-size: 17px; color: #1a237e; margin-bottom: 10px; }
+        .options label {
+            display: inline-block;
+            margin-right: 22px;
+            font-weight: 500;
+            cursor: pointer;
+            color: #2c3e6b;
+            font-size: 16px;
+            background: #f0f4ff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .options label:hover { background: #e0e9ff; border-color: #1a237e; }
+        .options input[type="radio"] { margin-right: 6px; accent-color: #1a237e; transform: scale(1.1); }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .history-table th { background: #1a237e; color: white; padding: 14px 10px; font-weight: 700; font-size: 16px; }
+        .history-table td { padding: 12px 10px; text-align: center; background: #fafbff; border-bottom: 1px solid #e8edf9; font-weight: 500; }
+        .history-table tr:last-child td { border-bottom: none; }
+        .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 10px; }
+        @media (max-width: 700px) { .admin-grid { grid-template-columns: 1fr; } }
+        .user-list { max-height: 350px; overflow-y: auto; border-radius: 20px; background: #fafbff; padding: 5px 0; border: 1px solid #e8edf9; }
+        .flex-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .flex-row button { width: auto; }
+        a { color: #1a237e; font-weight: 600; text-decoration: none; border-bottom: 2px dotted #ffc107; }
+        a:hover { color: #ff6f00; }
+        .welcome-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .welcome-row h3 { font-size: 24px; color: #1a237e; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logout-btn {
+            background: #c62828;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(198,40,40,0.3);
+        }
+        .logout-btn:hover { background: #8e0000; transform: scale(1.03); }
+        .sub-title { font-size: 20px; font-weight: 700; color: #1a237e; margin: 20px 0 12px 0; display: flex; align-items: center; gap: 8px; }
+        .user-list::-webkit-scrollbar { width: 6px; }
+        .user-list::-webkit-scrollbar-thumb { background: #c5d0e8; border-radius: 10px; }
+        .user-list::-webkit-scrollbar-track { background: #f0f4ff; }
+        @media (max-width: 500px) { .container { padding: 20px; } h2 { font-size: 22px; } .card div { font-size: 18px; } .tab { padding: 8px 14px; font-size: 14px; } }
+    </style>
+</head>
+<body>
+<div class="container" id="app">
+    <h2><i class="fas fa-book-open" style="color:#ffc107;"></i> PSC Daily Mock Test</h2>
+    <div id="message"></div>
+
+    <!-- ==================== LOGIN ==================== -->
+    <div id="loginForm">
+        <div class="form-group">
+            <label><i class="fas fa-user"></i> User ID</label>
+            <input type="text" id="loginUserId" placeholder="Enter your User ID">
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <input type="password" id="loginPass" placeholder="Enter your Password">
+        </div>
+        <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
+        <p style="text-align:center; margin-top:18px; font-size:16px;">
+            New user? <a href="#" onclick="showRegister()">Register here</a>
+        </p>
+    </div>
+
+    <!-- ==================== REGISTER ==================== -->
+    <div id="registerForm" class="hidden">
+        <div class="form-group">
+            <label><i class="fas fa-user"></i> User ID</label>
+            <input type="text" id="regUserId" placeholder="Choose a unique User ID">
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-user-circle"></i> Full Name</label>
+            <input type="text" id="regName" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <input type="password" id="regPass" placeholder="Create a Password">
+        </div>
+        <button onclick="register()"><i class="fas fa-user-plus"></i> Register</button>
+        <button class="btn-secondary" onclick="showLogin()"><i class="fas fa-arrow-left"></i> Back to Login</button>
+    </div>
+
+    <!-- ==================== DASHBOARD ==================== -->
+    <div id="dashboard" class="hidden">
+        <div class="welcome-row">
+            <h3><i class="fas fa-user-circle"></i> Welcome, <span id="userName">User</span>!</h3>
+            <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('dashboard-tab')"><i class="fas fa-chart-pie"></i> Dashboard</div>
+            <div class="tab" onclick="switchTab('history-tab')"><i class="fas fa-history"></i> History</div>
+            <div class="tab hidden" id="adminTabBtn" onclick="switchTab('admin-tab')"><i class="fas fa-cog"></i> Admin</div>
+        </div>
+
+        <!-- Tab 1: Dashboard -->
+        <div id="dashboard-tab" class="tab-content active">
+            <div class="card">
+                <div><i class="fas fa-trophy"></i> <span>Total Points</span> <span id="totalPoints">0</span></div>
+                <div><i class="fas fa-ranking-star"></i> <span>Your Rank</span> <span id="userRank">-</span></div>
+            </div>
+            <div id="timer"><i class="fas fa-hourglass-half"></i> ⏳ 05:00</div>
+            <div id="resultStatus"></div>
+            <hr style="margin:20px 0; border:1px dashed #dce3f0;">
+            <div class="sub-title"><i class="fas fa-question-circle" style="color:#ffc107;"></i> Today's Questions</div>
+            <form id="testForm">
+                <div id="questionsContainer"></div>
+                <button type="button" id="submitBtn" onclick="submitTest()"><i class="fas fa-paper-plane"></i> Submit Test</button>
+            </form>
+        </div>
+
+        <!-- Tab 2: History -->
+        <div id="history-tab" class="tab-content">
+            <div class="sub-title"><i class="fas fa-calendar-alt"></i> Your Daily Points History</div>
+            <div id="historyContainer"><p><i class="fas fa-spinner fa-spin"></i> Loading...</p></div>
+        </div>
+
+        <!-- Tab 3: Admin -->
+        <div id="admin-tab" class="tab-content">
+            <div class="sub-title"><i class="fas fa-tools"></i> Admin Panel</div>
+            <div class="admin-grid">
+                <!-- Add Question -->
+                <div>
+                    <h5 style="color:#1a237e; margin-bottom:12px;"><i class="fas fa-plus-circle"></i> Add New Question</h5>
+                    <div class="form-group">
+                        <label>Date (YYYY-MM-DD)</label>
+                        <input type="text" id="qDate" placeholder="2026-06-29">
+                    </div>
+                    <div class="form-group">
+                        <label>Question</label>
+                        <input type="text" id="qText" placeholder="Type question here">
+                    </div>
+                    <div class="form-group"><label>Option A</label><input type="text" id="optA"></div>
+                    <div class="form-group"><label>Option B</label><input type="text" id="optB"></div>
+                    <div class="form-group"><label>Option C</label><input type="text" id="optC"></div>
+                    <div class="form-group"><label>Option D</label><input type="text" id="optD"></div>
+                    <div class="form-group">
+                        <label>Correct Answer (A/B/C/D)</label>
+                        <input type="text" id="ans" maxlength="1" style="text-transform:uppercase;">
+                    </div>
+                    <button onclick="addQuestion()"><i class="fas fa-save"></i> Add Question</button>
+                </div>
+                <div>
+                    <!-- Set Publish Time -->
+                    <h5 style="color:#1a237e; margin-bottom:12px;"><i class="fas fa-clock"></i> Set Result Publish Time</h5>
+                    <div class="form-group">
+                        <label>Date & Time</label>
+                        <input type="datetime-local" id="publishTimeInput">
+                    </div>
+                    <button onclick="setPublishTime()"><i class="fas fa-upload"></i> Update Time</button>
+                    <hr style="margin:25px 0; border:1px dashed #dce3f0;">
+                    <!-- All Users -->
+                    <h5 style="color:#1a237e; margin-bottom:12px;"><i class="fas fa-users"></i> All Users & Ranks</h5>
+                    <div class="user-list" id="userListContainer"><p><i class="fas fa-spinner fa-spin"></i> Loading...</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ==================== CONFIG ====================
+    // 🔥 IMPORTANT: Replace with your actual Google Apps Script Web App URL
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx9bGFRuhd6-HwrCMEA85O6_usM9P8eebSJUfty1Xx7Gkqbs1GXbyAiMj9OPi-qsO5-/exec"; 
+
+    let currentUser = null;
+    let timerInterval = null;
+    let timerSeconds = 300; // 5 minutes
+    let countdownInterval = null;
+
+    // ==================== UI HELPERS ====================
+    function showMessage(msg, type = 'error') {
+        const el = document.getElementById('message');
+        el.textContent = msg;
+        el.className = type;
+        setTimeout(() => { el.className = ''; el.textContent = ''; }, 6000);
+    }
+
+    function showRegister() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('registerForm').classList.remove('hidden');
+        document.getElementById('dashboard').classList.add('hidden');
+    }
+    function showLogin() {
+        document.getElementById('loginForm').classList.remove('hidden');
+        document.getElementById('registerForm').classList.add('hidden');
+        document.getElementById('dashboard').classList.add('hidden');
+    }
+
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        document.querySelectorAll('.tab').forEach(el => {
+            if (el.getAttribute('onclick') && el.getAttribute('onclick').includes(tabId)) {
+                el.classList.add('active');
+            }
+        });
+        if (tabId === 'history-tab') loadHistory();
+        if (tabId === 'admin-tab') loadAdminPanel();
+    }
+
+    // ==================== AUTH ====================
+    async function register() {
+        const userId = document.getElementById('regUserId').value.trim();
+        const name = document.getElementById('regName').value.trim();
+        const pass = document.getElementById('regPass').value;
+        if (!userId || !name || !pass) return showMessage('Please fill all fields');
+
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'register', userId, name, password: pass })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            showMessage('Registration successful! Please login.', 'success');
+            showLogin();
+            document.getElementById('loginUserId').value = userId;
+        } else {
+            showMessage(data.message);
+        }
+    }
+
+    async function login() {
+        const userId = document.getElementById('loginUserId').value.trim();
+        const pass = document.getElementById('loginPass').value;
+        if (!userId || !pass) return showMessage('Please enter User ID and Password');
+
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'login', userId, password: pass })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            currentUser = data;
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+            
+            if (data.isAdmin) {
+                document.getElementById('adminTabBtn').classList.remove('hidden');
+            } else {
+                document.getElementById('adminTabBtn').classList.add('hidden');
+            }
+            switchTab('dashboard-tab');
+            loadDashboard();
+        } else {
+            showMessage(data.message);
+        }
+    }
+
+    function logout() {
+        clearInterval(timerInterval);
+        clearInterval(countdownInterval);
+        currentUser = null;
+        showLogin();
+        document.getElementById('loginPass').value = '';
+        document.getElementById('loginUserId').value = '';
+    }
+
+    // ==================== DASHBOARD ====================
+    async function loadDashboard() {
+        if (!currentUser) return;
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'getDashboard', userId: currentUser.userId })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            document.getElementById('userName').textContent = data.name;
+            document.getElementById('totalPoints').textContent = data.points;
+            document.getElementById('userRank').textContent = data.rank;
+
+            const resultStatus = document.getElementById('resultStatus');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (data.alreadySubmitted) {
+                submitBtn.disabled = true;
+                if (data.resultPublished && data.userScore !== null) {
+                    resultStatus.innerHTML = `<span style="color:#2e7d32;">✅ Your Score: <strong>${data.userScore}</strong></span>`;
+                } else if (data.publishTime) {
+                    const publishDate = new Date(data.publishTime);
+                    resultStatus.innerHTML = `⏳ Your test has been submitted. Results will be published on <strong>${publishDate.toLocaleString()}</strong>. Please wait.`;
+                    startCountdownToPublish(publishDate);
+                } else {
+                    resultStatus.innerHTML = `⏳ Your test has been submitted. Results will be published soon.`;
+                }
+            } else {
+                submitBtn.disabled = false;
+                resultStatus.innerHTML = '';
+            }
+
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            
+            if (data.questions.length === 0) {
+                container.innerHTML = '<p style="color:#2e7d32; font-weight:600;">✅ No new questions for today. Check back tomorrow!</p>';
+                document.getElementById('timer').textContent = '⏳ No test today';
+                submitBtn.disabled = true;
+                clearInterval(timerInterval);
+                return;
+            }
+
+            data.questions.forEach(q => {
+                const div = document.createElement('div');
+                div.className = 'question-box';
+                let optsHtml = '';
+                const labels = ['A', 'B', 'C', 'D'];
+                q.options.forEach((opt, idx) => {
+                    optsHtml += `<label><input type="radio" name="q${q.id}" value="${labels[idx]}"> ${opt}</label>`;
+                });
+                div.innerHTML = `<p><i class="fas fa-question-circle" style="color:#ffc107;"></i> <strong>Q${q.id}:</strong> ${q.question}</p><div class="options">${optsHtml}</div>`;
+                container.appendChild(div);
+            });
+
+            if (!data.alreadySubmitted) {
+                startTimer(300);
+            } else {
+                document.getElementById('timer').textContent = '✅ Already Submitted';
+                clearInterval(timerInterval);
+            }
+        }
+    }
+
+    function startCountdownToPublish(publishDate) {
+        const el = document.getElementById('resultStatus');
+        clearInterval(countdownInterval);
+        countdownInterval = setInterval(() => {
+            const now = new Date();
+            const diff = publishDate - now;
+            if (diff <= 0) {
+                clearInterval(countdownInterval);
+                loadDashboard();
+                return;
+            }
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            el.innerHTML = `⏳ Results will be published in <strong>${hours}h ${mins}m ${secs}s</strong>`;
+        }, 1000);
+    }
+
+    function startTimer(seconds) {
+        clearInterval(timerInterval);
+        timerSeconds = seconds;
+        updateTimerDisplay();
+
+        timerInterval = setInterval(() => {
+            timerSeconds--;
+            updateTimerDisplay();
+            if (timerSeconds <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('timer').textContent = '⏰ Time is up! Auto-submitting...';
+                document.getElementById('submitBtn').disabled = true;
+                submitTest();
+            }
+        }, 1000);
+    }
+
+    function updateTimerDisplay() {
+        let mins = Math.floor(timerSeconds / 60);
+        let secs = timerSeconds % 60;
+        document.getElementById('timer').textContent = `⏳ ${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+        if (timerSeconds < 60) {
+            document.getElementById('timer').style.color = '#c62828';
+        } else {
+            document.getElementById('timer').style.color = '#b71c1c';
+        }
+    }
+
+    // ==================== SUBMIT TEST ====================
+    async function submitTest() {
+        clearInterval(timerInterval);
+        const form = document.getElementById('testForm');
+        const inputs = form.querySelectorAll('input[type="radio"]:checked');
+        let answers = {};
+        inputs.forEach(inp => { answers[inp.name] = inp.value; });
+        
+        if (inputs.length === 0) {
+            if (!confirm('You haven\'t answered any questions. Submit anyway?')) return;
+        }
+
+        answers.action = 'submitTest';
+        answers.userId = currentUser.userId;
+
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(answers)
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            showMessage(data.message, 'success');
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('timer').textContent = '✅ Submitted';
+            loadDashboard();
+        } else {
+            showMessage(data.message);
+            if (data.message.includes('already submitted')) {
+                loadDashboard();
+            }
+        }
+    }
+
+    // ==================== HISTORY ====================
+    async function loadHistory() {
+        if (!currentUser) return;
+        const container = document.getElementById('historyContainer');
+        container.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Loading...</p>';
+
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'getHistory', userId: currentUser.userId })
+        });
+        const data = await res.json();
+        if (data.status === 'success' && data.history.length > 0) {
+            let html = `<table class="history-table"><tr><th><i class="fas fa-calendar-day"></i> Date</th><th><i class="fas fa-star"></i> Score</th></tr>`;
+            data.history.forEach(h => {
+                html += `<tr><td>${h.date}</td><td>${h.score}</td></tr>`;
+            });
+            html += `</table>`;
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = '<p style="color:#5c6b8a;">No history found. Start taking tests!</p>';
+        }
+    }
+
+    // ==================== ADMIN PANEL ====================
+    async function loadAdminPanel() {
+        if (!currentUser) return;
+        
+        const container = document.getElementById('userListContainer');
+        container.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Loading...</p>';
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'getAllUsers', userId: currentUser.userId })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            let html = `<table class="history-table"><tr><th>Name</th><th>User ID</th><th>Points</th><th>Rank</th></tr>`;
+            data.users.forEach(u => {
+                html += `<tr><td>${u.name}</td><td>${u.userId}</td><td>${u.points}</td><td>${u.rank}</td></tr>`;
+            });
+            html += `</table>`;
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = '<p>Could not load users.</p>';
+        }
+
+        const settingsRes = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'getSettings', userId: currentUser.userId })
+        });
+        const settingsData = await settingsRes.json();
+        if (settingsData.status === 'success' && settingsData.publishTime) {
+            const date = new Date(settingsData.publishTime);
+            const formatted = date.toISOString().slice(0, 16);
+            document.getElementById('publishTimeInput').value = formatted;
+        }
+    }
+
+    async function setPublishTime() {
+        const datetime = document.getElementById('publishTimeInput').value;
+        if (!datetime) return showMessage('Please select a date and time');
+        
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ 
+                action: 'setPublishTime', 
+                userId: currentUser.userId, 
+                publishTime: new Date(datetime).toISOString() 
+            })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            showMessage('Publish time updated!', 'success');
+        } else {
+            showMessage(data.message);
+        }
+    }
+
+    async function addQuestion() {
+        const date = document.getElementById('qDate').value;
+        const question = document.getElementById('qText').value;
+        const optA = document.getElementById('optA').value;
+        const optB = document.getElementById('optB').value;
+        const optC = document.getElementById('optC').value;
+        const optD = document.getElementById('optD').value;
+        const answer = document.getElementById('ans').value.toUpperCase();
+
+        if (!date || !question || !optA || !optB || !optC || !optD || !answer) {
+            return showMessage('Please fill all fields');
+        }
+
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'addQuestion', userId: currentUser.userId, date, question, optA, optB, optC, optD, answer })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            showMessage('Question added successfully!', 'success');
+            document.getElementById('qText').value = '';
+            document.getElementById('optA').value = '';
+            document.getElementById('optB').value = '';
+            document.getElementById('optC').value = '';
+            document.getElementById('optD').value = '';
+            document.getElementById('ans').value = '';
+        } else {
+            showMessage(data.message);
+        }
+    }
+
+    // ==================== INIT ====================
+    window.onload = showLogin;
+</script>
+</body>
+</html>
