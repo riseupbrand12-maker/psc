@@ -9,13 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ───────────── Reset & Base ───────────── */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Anek Malayalam', sans-serif;
             min-height: 100vh;
@@ -26,8 +20,6 @@
             background: linear-gradient(145deg, #f0f4ff 0%, #d9e2f5 100%);
             background-attachment: fixed;
         }
-
-        /* ───────────── Main Container ───────────── */
         .container {
             max-width: 1280px;
             width: 100%;
@@ -36,14 +28,9 @@
             -webkit-backdrop-filter: blur(24px);
             padding: 30px 34px;
             border-radius: 48px;
-            box-shadow:
-                0 30px 80px rgba(26, 35, 126, 0.12),
-                0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            box-shadow: 0 30px 80px rgba(26, 35, 126, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
         }
-
-        /* ───────────── Typography ───────────── */
         h2 {
             color: #0f1b5e;
             font-weight: 700;
@@ -57,9 +44,7 @@
             position: relative;
             letter-spacing: -0.3px;
         }
-        h2 i {
-            color: #f9a825;
-        }
+        h2 i { color: #f9a825; }
         h2::after {
             content: '';
             display: block;
@@ -72,7 +57,6 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
         .sub-title {
             font-size: 20px;
             font-weight: 700;
@@ -82,28 +66,17 @@
             align-items: center;
             gap: 10px;
         }
-        .sub-title i {
-            color: #f9a825;
-        }
-
-        /* ───────────── Forms ───────────── */
-        .form-group {
-            margin-bottom: 18px;
-        }
+        .sub-title i { color: #f9a825; }
+        .form-group { margin-bottom: 18px; }
         .form-group label {
             display: block;
             font-weight: 600;
             color: #0f1b5e;
             margin-bottom: 6px;
             font-size: 15px;
-            letter-spacing: 0.2px;
         }
-        .form-group label i {
-            width: 20px;
-            color: #f9a825;
-        }
-        .form-group input,
-        .form-group select {
+        .form-group label i { width: 20px; color: #f9a825; }
+        .form-group input, .form-group select {
             width: 100%;
             padding: 14px 20px;
             border: 2px solid #e2e8f5;
@@ -120,11 +93,7 @@
             box-shadow: 0 0 0 5px rgba(26, 35, 126, 0.08);
             background: #ffffff;
         }
-        .form-group input::placeholder {
-            color: #a0b0d0;
-        }
-
-        /* ───────────── Buttons ───────────── */
+        .form-group input::placeholder { color: #a0b0d0; }
         button {
             padding: 16px 28px;
             background: linear-gradient(145deg, #1a237e, #0f1b5e);
@@ -137,7 +106,6 @@
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 10px 28px rgba(26, 35, 126, 0.25);
-            letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -148,16 +116,8 @@
             box-shadow: 0 16px 40px rgba(26, 35, 126, 0.35);
             background: linear-gradient(145deg, #0f1b5e, #080f3a);
         }
-        button:active {
-            transform: scale(0.97);
-        }
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none !important;
-            box-shadow: none !important;
-        }
-
+        button:active { transform: scale(0.97); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
         .btn-secondary {
             background: linear-gradient(145deg, #f9a825, #f57f17);
             color: #0f1b5e;
@@ -167,15 +127,11 @@
             background: linear-gradient(145deg, #f57f17, #e65100);
             box-shadow: 0 16px 40px rgba(249, 168, 37, 0.4);
         }
-
         .btn-danger {
             background: linear-gradient(145deg, #c62828, #b71c1c);
             box-shadow: 0 10px 28px rgba(198, 40, 40, 0.25);
         }
-        .btn-danger:hover {
-            background: linear-gradient(145deg, #b71c1c, #880e0e);
-        }
-
+        .btn-danger:hover { background: linear-gradient(145deg, #b71c1c, #880e0e); }
         .btn-outline {
             background: transparent !important;
             border: 2px solid #1a237e;
@@ -188,29 +144,13 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(26, 35, 126, 0.2) !important;
         }
+        .btn-sm { padding: 8px 22px; font-size: 15px; width: auto; }
+        .btn-block { width: 100%; justify-content: center; }
+        .hidden { display: none !important; }
+        .text-center { text-align: center; }
+        .mt-16 { margin-top: 16px; }
+        .flex-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 
-        .btn-sm {
-            padding: 8px 22px;
-            font-size: 15px;
-            width: auto;
-        }
-
-        .btn-ghost {
-            background: rgba(26, 35, 126, 0.06) !important;
-            color: #1a237e;
-            box-shadow: none !important;
-        }
-        .btn-ghost:hover {
-            background: rgba(26, 35, 126, 0.14) !important;
-            transform: translateY(-2px);
-        }
-
-        .btn-block {
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* ───────────── Messages ───────────── */
         #message {
             padding: 14px 22px;
             border-radius: 20px;
@@ -221,61 +161,11 @@
             border: 2px solid transparent;
             animation: slideDown 0.4s ease;
         }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-14px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .error {
-            background: #ffebee;
-            color: #c62828;
-            border-color: #ffcdd2;
-        }
-        .success {
-            background: #e8f5e9;
-            color: #2e7d32;
-            border-color: #c8e6c9;
-        }
-        .info {
-            background: #e3f2fd;
-            color: #0d47a1;
-            border-color: #bbdefb;
-        }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+        .error { background: #ffebee; color: #c62828; border-color: #ffcdd2; }
+        .success { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+        .info { background: #e3f2fd; color: #0d47a1; border-color: #bbdefb; }
 
-        /* ───────────── Utility ───────────── */
-        .hidden {
-            display: none !important;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .mt-8 {
-            margin-top: 8px;
-        }
-        .mt-16 {
-            margin-top: 16px;
-        }
-        .gap-8 {
-            gap: 8px;
-        }
-        .flex-center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .flex-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* ───────────── Cards ───────────── */
         .card {
             background: linear-gradient(145deg, #ffffff, #f5f9ff);
             padding: 18px 24px;
@@ -285,31 +175,14 @@
             justify-content: space-around;
             text-align: center;
             flex-wrap: wrap;
-            box-shadow:
-                0 4px 16px rgba(26, 35, 126, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 16px rgba(26, 35, 126, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.6);
             gap: 12px;
         }
-        .card div {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0f1b5e;
-            min-width: 120px;
-        }
-        .card div i {
-            color: #f9a825;
-            margin-right: 6px;
-        }
-        .card span {
-            display: block;
-            font-size: 14px;
-            font-weight: 400;
-            color: #6a7fa0;
-            margin-top: 2px;
-        }
+        .card div { font-size: 22px; font-weight: 700; color: #0f1b5e; min-width: 120px; }
+        .card div i { color: #f9a825; margin-right: 6px; }
+        .card span { display: block; font-size: 14px; font-weight: 400; color: #6a7fa0; margin-top: 2px; }
 
-        /* ───────────── Tabs ───────────── */
         .tabs {
             display: flex;
             gap: 6px;
@@ -332,39 +205,18 @@
             align-items: center;
             gap: 8px;
         }
-        .tab i {
-            font-size: 15px;
-        }
+        .tab i { font-size: 15px; }
         .tab.active {
             background: #1a237e;
             color: #fff;
             border-bottom-color: #f9a825;
             box-shadow: 0 -4px 16px rgba(26, 35, 126, 0.1);
         }
-        .tab:hover:not(.active) {
-            background: #eef3fc;
-            color: #1a237e;
-        }
+        .tab:hover:not(.active) { background: #eef3fc; color: #1a237e; }
+        .tab-content { display: none; animation: fadeUp 0.35s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-        .tab-content {
-            display: none;
-            animation: fadeUp 0.35s ease;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ───────────── Timer ───────────── */
         #questionTimer {
             font-size: 30px;
             font-weight: 800;
@@ -391,24 +243,8 @@
             color: #b71c1c;
             animation: pulseDanger 0.5s infinite alternate;
         }
-        @keyframes pulseWarning {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.02);
-            }
-        }
-        @keyframes pulseDanger {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(183, 28, 28, 0.2);
-            }
-            100% {
-                transform: scale(1.03);
-                box-shadow: 0 0 30px rgba(183, 28, 28, 0.15);
-            }
-        }
+        @keyframes pulseWarning { 0% { transform: scale(1); } 100% { transform: scale(1.02); } }
+        @keyframes pulseDanger { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(183, 28, 28, 0.2); } 100% { transform: scale(1.03); box-shadow: 0 0 30px rgba(183, 28, 28, 0.15); } }
 
         #resultStatus {
             padding: 14px 20px;
@@ -423,37 +259,20 @@
             box-shadow: 0 4px 12px rgba(249, 168, 37, 0.1);
         }
 
-        /* ───────────── Test Layout ───────────── */
-        .test-layout {
-            display: flex;
-            gap: 28px;
-            margin-top: 16px;
-        }
-
-        /* ── Palette ── */
+        .test-layout { display: flex; gap: 28px; margin-top: 16px; }
         .question-palette {
             flex: 0 0 230px;
             background: #f8fbff;
             border-radius: 28px;
             padding: 20px 16px;
-            box-shadow:
-                0 4px 16px rgba(26, 35, 126, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 16px rgba(26, 35, 126, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
             border: 1px solid #e8edf8;
             max-height: 620px;
             overflow-y: auto;
-            transition: all 0.3s;
         }
-        .question-palette::-webkit-scrollbar {
-            width: 5px;
-        }
-        .question-palette::-webkit-scrollbar-thumb {
-            background: #c5d0e8;
-            border-radius: 10px;
-        }
-        .question-palette::-webkit-scrollbar-track {
-            background: #f0f4ff;
-        }
+        .question-palette::-webkit-scrollbar { width: 5px; }
+        .question-palette::-webkit-scrollbar-thumb { background: #c5d0e8; border-radius: 10px; }
+        .question-palette::-webkit-scrollbar-track { background: #f0f4ff; }
 
         .palette-legend {
             display: flex;
@@ -466,24 +285,10 @@
             padding-bottom: 14px;
             color: #2c3e6b;
         }
-        .palette-legend span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .legend-color {
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            border-radius: 6px;
-            flex-shrink: 0;
-        }
+        .palette-legend span { display: flex; align-items: center; gap: 6px; }
+        .legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 6px; flex-shrink: 0; }
 
-        .palette-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-        }
+        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
         .q-btn {
             aspect-ratio: 1/1;
             border: none;
@@ -498,49 +303,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
-        .q-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        }
+        .q-btn:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
         .q-btn.current {
             outline: 4px solid #1a237e;
             outline-offset: 3px;
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
         }
-        .q-btn.not-answered {
-            background: #e53935;
-        }
-        .q-btn.answered {
-            background: #43a047;
-        }
-        .q-btn.marked {
-            background: #f9a825;
-            color: #0f1b5e;
-        }
-        .q-btn.answered-marked {
-            background: #1e88e5;
-        }
+        .q-btn.not-answered { background: #e53935; }
+        .q-btn.answered { background: #43a047; }
+        .q-btn.marked { background: #f9a825; color: #0f1b5e; }
+        .q-btn.answered-marked { background: #1e88e5; }
 
-        /* ── Question Main ── */
-        .question-main {
-            flex: 1;
-            min-width: 0;
-        }
-
+        .question-main { flex: 1; min-width: 0; }
         .question-box {
             background: #fafcff;
             padding: 24px 28px;
             border-radius: 28px;
             border-left: 6px solid #1a237e;
             box-shadow: 0 2px 12px rgba(26, 35, 126, 0.04);
-            transition: all 0.3s;
         }
-        .question-box:hover {
-            box-shadow: 0 4px 24px rgba(26, 35, 126, 0.06);
-        }
+        .question-box:hover { box-shadow: 0 4px 24px rgba(26, 35, 126, 0.06); }
         .question-box p {
             font-weight: 600;
             font-size: 19px;
@@ -548,15 +332,8 @@
             margin-bottom: 14px;
             line-height: 1.5;
         }
-        .question-box p i {
-            color: #f9a825;
-            margin-right: 6px;
-        }
-        .options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 16px;
-        }
+        .question-box p i { color: #f9a825; margin-right: 6px; }
+        .options { display: flex; flex-wrap: wrap; gap: 10px 16px; }
         .options label {
             display: inline-flex;
             align-items: center;
@@ -571,18 +348,9 @@
             transition: all 0.25s;
             border: 2px solid transparent;
         }
-        .options label:hover {
-            background: #e4edfe;
-            border-color: #1a237e;
-            transform: translateY(-1px);
-        }
-        .options input[type="radio"] {
-            accent-color: #1a237e;
-            transform: scale(1.15);
-            flex-shrink: 0;
-        }
+        .options label:hover { background: #e4edfe; border-color: #1a237e; transform: translateY(-1px); }
+        .options input[type="radio"] { accent-color: #1a237e; transform: scale(1.15); flex-shrink: 0; }
 
-        /* ── Question Controls ── */
         .question-controls {
             display: flex;
             justify-content: space-between;
@@ -591,17 +359,8 @@
             margin-top: 22px;
             gap: 14px;
         }
-        .question-controls .left-btns {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .question-controls button {
-            padding: 10px 22px;
-            font-size: 15px;
-            margin-top: 0;
-            min-width: 80px;
-        }
+        .question-controls .left-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+        .question-controls button { padding: 10px 22px; font-size: 15px; margin-top: 0; min-width: 80px; }
         .progress-text {
             font-weight: 700;
             color: #0f1b5e;
@@ -612,7 +371,6 @@
             display: inline-block;
         }
 
-        /* ───────────── Welcome Row ───────────── */
         .welcome-row {
             display: flex;
             justify-content: space-between;
@@ -629,9 +387,7 @@
             align-items: center;
             gap: 12px;
         }
-        .welcome-row h3 i {
-            color: #f9a825;
-        }
+        .welcome-row h3 i { color: #f9a825; }
         .logout-btn {
             background: #c62828;
             padding: 10px 28px;
@@ -648,13 +404,8 @@
             gap: 8px;
             font-family: 'Anek Malayalam', sans-serif;
         }
-        .logout-btn:hover {
-            background: #8e0000;
-            transform: scale(1.03);
-            box-shadow: 0 8px 28px rgba(198, 40, 40, 0.3);
-        }
+        .logout-btn:hover { background: #8e0000; transform: scale(1.03); box-shadow: 0 8px 28px rgba(198, 40, 40, 0.3); }
 
-        /* ───────────── History Table ───────────── */
         .history-table {
             width: 100%;
             border-collapse: collapse;
@@ -663,41 +414,13 @@
             overflow: hidden;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
-        .history-table th {
-            background: #1a237e;
-            color: #fff;
-            padding: 14px 16px;
-            font-weight: 700;
-            font-size: 16px;
-            text-align: center;
-        }
-        .history-table td {
-            padding: 12px 16px;
-            text-align: center;
-            background: #fafcff;
-            border-bottom: 1px solid #e8edf8;
-            font-weight: 500;
-        }
-        .history-table tr:last-child td {
-            border-bottom: none;
-        }
-        .history-table tr:hover td {
-            background: #f0f5ff;
-        }
+        .history-table th { background: #1a237e; color: #fff; padding: 14px 16px; font-weight: 700; font-size: 16px; text-align: center; }
+        .history-table td { padding: 12px 16px; text-align: center; background: #fafcff; border-bottom: 1px solid #e8edf8; font-weight: 500; }
+        .history-table tr:last-child td { border-bottom: none; }
+        .history-table tr:hover td { background: #f0f5ff; }
 
-        /* ───────────── Admin Panel ───────────── */
-        .admin-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            margin-top: 10px;
-        }
-        @media (max-width: 760px) {
-            .admin-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 10px; }
+        @media (max-width: 760px) { .admin-grid { grid-template-columns: 1fr; } }
         .admin-card {
             background: #fafcff;
             border-radius: 28px;
@@ -705,932 +428,729 @@
             border: 1px solid #e8edf8;
             box-shadow: 0 4px 16px rgba(26, 35, 126, 0.04);
         }
-        .admin-card h5 {
-            color: #0f1b5e;
-            font-size: 18px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .admin-card h5 i {
-            color: #f9a825;
-        }
+        .admin-card h5 { color: #0f1b5e; font-size: 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .admin-card h5 i { color: #f9a825; }
+        .user-list { max-height: 340px; overflow-y: auto; border-radius: 20px; background: #fafcff; padding: 4px 0; }
+        .user-list::-webkit-scrollbar { width: 5px; }
+        .user-list::-webkit-scrollbar-thumb { background: #c5d0e8; border-radius: 10px; }
+        .user-list::-webkit-scrollbar-track { background: #f0f4ff; }
 
-        .user-list {
-            max-height: 340px;
-            overflow-y: auto;
-            border-radius: 20px;
-            background: #fafcff;
-            padding: 4px 0;
-        }
-        .user-list::-webkit-scrollbar {
-            width: 5px;
-        }
-        .user-list::-webkit-scrollbar-thumb {
-            background: #c5d0e8;
-            border-radius: 10px;
-        }
-        .user-list::-webkit-scrollbar-track {
-            background: #f0f4ff;
-        }
+        a { color: #1a237e; font-weight: 600; text-decoration: none; border-bottom: 2px dotted #f9a825; transition: 0.2s; }
+        a:hover { color: #e65100; border-bottom-color: #e65100; }
+        .auth-links { text-align: center; margin-top: 18px; font-size: 16px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .auth-links a { font-weight: 600; }
 
-        /* ───────────── Links ───────────── */
-        a {
-            color: #1a237e;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 2px dotted #f9a825;
-            transition: 0.2s;
-        }
-        a:hover {
-            color: #e65100;
-            border-bottom-color: #e65100;
-        }
-
-        /* ───────────── Responsive ───────────── */
         @media (max-width: 880px) {
-            .container {
-                padding: 22px 20px;
-                border-radius: 32px;
-            }
-            .test-layout {
-                flex-direction: column;
-            }
-            .question-palette {
-                flex: none;
-                width: 100%;
-                max-height: 180px;
-                padding: 14px;
-            }
-            .palette-grid {
-                grid-template-columns: repeat(10, 1fr);
-            }
-            .card div {
-                font-size: 18px;
-                min-width: 80px;
-            }
+            .container { padding: 22px 20px; border-radius: 32px; }
+            .test-layout { flex-direction: column; }
+            .question-palette { flex: none; width: 100%; max-height: 180px; padding: 14px; }
+            .palette-grid { grid-template-columns: repeat(10, 1fr); }
+            .card div { font-size: 18px; min-width: 80px; }
         }
-
         @media (max-width: 520px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 16px 14px;
-                border-radius: 28px;
-            }
-            h2 {
-                font-size: 22px;
-            }
-            .card div {
-                font-size: 16px;
-                min-width: 60px;
-            }
-            .tab {
-                padding: 6px 14px;
-                font-size: 13px;
-            }
-            .tab i {
-                font-size: 12px;
-            }
-            .palette-grid {
-                grid-template-columns: repeat(5, 1fr);
-                gap: 6px;
-            }
-            .q-btn {
-                font-size: 13px;
-                border-radius: 10px;
-            }
-            .question-box {
-                padding: 16px 18px;
-            }
-            .question-box p {
-                font-size: 16px;
-            }
-            .options label {
-                font-size: 14px;
-                padding: 6px 14px;
-            }
-            .question-controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .question-controls .left-btns {
-                justify-content: center;
-            }
-            .question-controls>div:last-child {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 8px;
-            }
-            .question-controls button {
-                font-size: 13px;
-                padding: 8px 16px;
-                min-width: 60px;
-            }
-            .logout-btn {
-                font-size: 13px;
-                padding: 6px 18px;
-            }
-            .welcome-row h3 {
-                font-size: 18px;
-            }
-            .admin-card {
-                padding: 16px 14px;
-            }
-            #questionTimer {
-                font-size: 22px;
-                padding: 10px;
-            }
-            .sub-title {
-                font-size: 17px;
-            }
-            .progress-text {
-                font-size: 14px;
-                padding: 4px 12px;
-            }
-            .palette-legend {
-                font-size: 11px;
-                gap: 4px 10px;
-            }
-            .legend-color {
-                width: 12px;
-                height: 12px;
-            }
+            body { padding: 10px; }
+            .container { padding: 16px 14px; border-radius: 28px; }
+            h2 { font-size: 22px; }
+            .card div { font-size: 16px; min-width: 60px; }
+            .tab { padding: 6px 14px; font-size: 13px; }
+            .tab i { font-size: 12px; }
+            .palette-grid { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+            .q-btn { font-size: 13px; border-radius: 10px; }
+            .question-box { padding: 16px 18px; }
+            .question-box p { font-size: 16px; }
+            .options label { font-size: 14px; padding: 6px 14px; }
+            .question-controls { flex-direction: column; align-items: stretch; }
+            .question-controls .left-btns { justify-content: center; }
+            .question-controls>div:last-child { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+            .question-controls button { font-size: 13px; padding: 8px 16px; min-width: 60px; }
+            .logout-btn { font-size: 13px; padding: 6px 18px; }
+            .welcome-row h3 { font-size: 18px; }
+            .admin-card { padding: 16px 14px; }
+            #questionTimer { font-size: 22px; padding: 10px; }
+            .sub-title { font-size: 17px; }
+            .progress-text { font-size: 14px; padding: 4px 12px; }
+            .palette-legend { font-size: 11px; gap: 4px 10px; }
+            .legend-color { width: 12px; height: 12px; }
         }
-
         @media (max-width: 400px) {
-            .container {
-                padding: 12px 10px;
-            }
-            .card {
-                padding: 12px 8px;
-                gap: 6px;
-            }
-            .card div {
-                font-size: 14px;
-                min-width: 50px;
-            }
-        }
-
-        /* ───────────── Login/Register links ───────────── */
-        .auth-links {
-            text-align: center;
-            margin-top: 18px;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .auth-links a {
-            font-weight: 600;
-        }
-
-        /* ───────────── Scroll behavior ───────────── */
-        .question-palette {
-            scroll-behavior: smooth;
-        }
-
-        /* ───────────── Loading shimmer ───────────── */
-        .shimmer {
-            background: linear-gradient(90deg, #f0f5ff 25%, #e8edf8 50%, #f0f5ff 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        @keyframes shimmer {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
+            .container { padding: 12px 10px; }
+            .card { padding: 12px 8px; gap: 6px; }
+            .card div { font-size: 14px; min-width: 50px; }
         }
     </style>
 </head>
 <body>
+<div class="container" id="app">
+    <h2><i class="fas fa-book-open"></i> PSC Daily Mock Test</h2>
+    <div id="message"></div>
 
-    <div class="container" id="app">
-        <h2><i class="fas fa-book-open"></i> PSC Daily Mock Test</h2>
-        <div id="message"></div>
-
-        <!-- ===================== LOGIN ===================== -->
-        <div id="loginForm">
-            <div class="form-group">
-                <label><i class="fas fa-user"></i> User ID</label>
-                <input type="text" id="loginUserId" placeholder="Enter your User ID" />
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> Password</label>
-                <input type="password" id="loginPass" placeholder="Enter your Password" />
-            </div>
-            <button class="btn-block" onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
-            <div class="auth-links">
-                <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
-                <span>|</span>
-                <a href="#" onclick="showRegister()">Create Account</a>
-            </div>
+    <!-- ===================== LOGIN ===================== -->
+    <div id="loginForm">
+        <div class="form-group">
+            <label><i class="fas fa-user"></i> User ID</label>
+            <input type="text" id="loginUserId" placeholder="Enter your User ID" />
         </div>
+        <div class="form-group">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <input type="password" id="loginPass" placeholder="Enter your Password" />
+        </div>
+        <button class="btn-block" onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
+        <div class="auth-links">
+            <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+            <span>|</span>
+            <a href="#" onclick="showRegister()">Create Account</a>
+        </div>
+    </div>
 
-        <!-- ===================== REGISTER ===================== -->
-        <div id="registerForm" class="hidden">
-            <div class="form-group">
-                <label><i class="fas fa-user"></i> User ID</label>
-                <input type="text" id="regUserId" placeholder="Choose a unique User ID" />
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-user-circle"></i> Full Name</label>
-                <input type="text" id="regName" placeholder="Your full name" />
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> Password</label>
-                <input type="password" id="regPass" placeholder="Create a Password" />
-            </div>
+    <!-- ===================== REGISTER ===================== -->
+    <div id="registerForm" class="hidden">
+        <div class="form-group">
+            <label><i class="fas fa-user"></i> User ID</label>
+            <input type="text" id="regUserId" placeholder="Choose a unique User ID" />
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-user-circle"></i> Full Name</label>
+            <input type="text" id="regName" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <input type="password" id="regPass" placeholder="Create a Password" />
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-question-circle"></i> Security Question</label>
+            <input type="text" id="regSecurityQuestion" placeholder="e.g. What is your pet's name?" />
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-answer"></i> Security Answer</label>
+            <input type="text" id="regSecurityAnswer" placeholder="Your answer" />
+        </div>
+        <button class="btn-block" onclick="register()"><i class="fas fa-user-plus"></i> Register</button>
+        <button class="btn-secondary btn-block mt-16" onclick="showLogin()"><i class="fas fa-arrow-left"></i> Back to Login</button>
+    </div>
+
+    <!-- ===================== FORGOT PASSWORD ===================== -->
+    <div id="forgotPasswordForm" class="hidden">
+        <div class="form-group">
+            <label><i class="fas fa-user"></i> User ID</label>
+            <input type="text" id="forgotUserId" placeholder="Enter your User ID" />
+        </div>
+        <div id="securityQuestionContainer" class="hidden">
             <div class="form-group">
                 <label><i class="fas fa-question-circle"></i> Security Question</label>
-                <input type="text" id="regSecurityQuestion" placeholder="e.g. What is your pet's name?" />
+                <input type="text" id="forgotSecurityQuestion" disabled />
             </div>
             <div class="form-group">
-                <label><i class="fas fa-answer"></i> Security Answer</label>
-                <input type="text" id="regSecurityAnswer" placeholder="Your answer" />
+                <label><i class="fas fa-answer"></i> Your Answer</label>
+                <input type="text" id="forgotSecurityAnswer" placeholder="Enter your answer" />
             </div>
-            <button class="btn-block" onclick="register()"><i class="fas fa-user-plus"></i> Register</button>
-            <button class="btn-secondary btn-block mt-16" onclick="showLogin()"><i class="fas fa-arrow-left"></i> Back to Login</button>
-        </div>
-
-        <!-- ===================== FORGOT PASSWORD ===================== -->
-        <div id="forgotPasswordForm" class="hidden">
             <div class="form-group">
-                <label><i class="fas fa-user"></i> User ID</label>
-                <input type="text" id="forgotUserId" placeholder="Enter your User ID" />
+                <label><i class="fas fa-lock"></i> New Password</label>
+                <input type="password" id="forgotNewPassword" placeholder="Enter new password" />
             </div>
-            <div id="securityQuestionContainer" class="hidden">
-                <div class="form-group">
-                    <label><i class="fas fa-question-circle"></i> Security Question</label>
-                    <input type="text" id="forgotSecurityQuestion" disabled />
-                </div>
-                <div class="form-group">
-                    <label><i class="fas fa-answer"></i> Your Answer</label>
-                    <input type="text" id="forgotSecurityAnswer" placeholder="Enter your answer" />
-                </div>
-                <div class="form-group">
-                    <label><i class="fas fa-lock"></i> New Password</label>
-                    <input type="password" id="forgotNewPassword" placeholder="Enter new password" />
-                </div>
-                <button class="btn-block" onclick="resetPassword()"><i class="fas fa-save"></i> Reset Password</button>
-            </div>
-            <button class="btn-secondary btn-block mt-16" onclick="showLogin()"><i class="fas fa-arrow-left"></i> Back to Login</button>
-            <button class="btn-block mt-16" id="forgotFetchBtn" onclick="fetchSecurityQuestion()"><i class="fas fa-search"></i> Get Security Question</button>
+            <button class="btn-block" onclick="resetPassword()"><i class="fas fa-save"></i> Reset Password</button>
+        </div>
+        <button class="btn-secondary btn-block mt-16" onclick="showLogin()"><i class="fas fa-arrow-left"></i> Back to Login</button>
+        <button class="btn-block mt-16" id="forgotFetchBtn" onclick="fetchSecurityQuestion()"><i class="fas fa-search"></i> Get Security Question</button>
+    </div>
+
+    <!-- ===================== DASHBOARD ===================== -->
+    <div id="dashboard" class="hidden">
+        <div class="welcome-row">
+            <h3><i class="fas fa-user-circle"></i> Welcome, <span id="userName">User</span>!</h3>
+            <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
         </div>
 
-        <!-- ===================== DASHBOARD ===================== -->
-        <div id="dashboard" class="hidden">
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('dashboard-tab')"><i class="fas fa-chart-pie"></i> Dashboard</div>
+            <div class="tab" onclick="switchTab('history-tab')"><i class="fas fa-history"></i> History</div>
+            <div class="tab hidden" id="adminTabBtn" onclick="switchTab('admin-tab')"><i class="fas fa-cog"></i> Admin</div>
+        </div>
 
-            <!-- Welcome -->
-            <div class="welcome-row">
-                <h3><i class="fas fa-user-circle"></i> Welcome, <span id="userName">User</span>!</h3>
-                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <!-- ======== TAB: DASHBOARD ======== -->
+        <div id="dashboard-tab" class="tab-content active">
+            <div class="card">
+                <div><i class="fas fa-trophy"></i> <span>Total Points</span> <span id="totalPoints">0</span></div>
+                <div><i class="fas fa-ranking-star"></i> <span>Your Rank</span> <span id="userRank">—</span></div>
             </div>
 
-            <!-- Tabs -->
-            <div class="tabs">
-                <div class="tab active" onclick="switchTab('dashboard-tab')"><i class="fas fa-chart-pie"></i> Dashboard</div>
-                <div class="tab" onclick="switchTab('history-tab')"><i class="fas fa-history"></i> History</div>
-                <div class="tab hidden" id="adminTabBtn" onclick="switchTab('admin-tab')"><i class="fas fa-cog"></i> Admin</div>
-            </div>
+            <div id="questionTimer"><i class="fas fa-hourglass-half"></i> ⏳ 01:00</div>
+            <div id="resultStatus"></div>
 
-            <!-- ======== TAB: DASHBOARD ======== -->
-            <div id="dashboard-tab" class="tab-content active">
+            <hr style="margin:18px 0; border:1px dashed #dce3f0;" />
+            <div class="sub-title"><i class="fas fa-question-circle"></i> Today's Questions</div>
 
-                <!-- Stats -->
-                <div class="card">
-                    <div><i class="fas fa-trophy"></i> <span>Total Points</span> <span id="totalPoints">0</span></div>
-                    <div><i class="fas fa-ranking-star"></i> <span>Your Rank</span> <span id="userRank">—</span></div>
-                </div>
-
-                <!-- Timer -->
-                <div id="questionTimer"><i class="fas fa-hourglass-half"></i> ⏳ 01:00</div>
-                <div id="resultStatus"></div>
-
-                <hr style="margin:18px 0; border:1px dashed #dce3f0;" />
-
-                <div class="sub-title"><i class="fas fa-question-circle"></i> Today's Questions</div>
-
-                <!-- Test Layout -->
-                <div class="test-layout">
-                    <!-- Palette -->
-                    <div class="question-palette" id="questionPalette">
-                        <div class="palette-legend">
-                            <span><span class="legend-color" style="background:#e53935;"></span> Not Ans.</span>
-                            <span><span class="legend-color" style="background:#43a047;"></span> Answered</span>
-                            <span><span class="legend-color" style="background:#f9a825;"></span> Marked</span>
-                            <span><span class="legend-color" style="background:#1e88e5;"></span> Ans+Mark</span>
-                        </div>
-                        <div class="palette-grid" id="paletteGrid"></div>
+            <div class="test-layout">
+                <div class="question-palette" id="questionPalette">
+                    <div class="palette-legend">
+                        <span><span class="legend-color" style="background:#e53935;"></span> Not Ans.</span>
+                        <span><span class="legend-color" style="background:#43a047;"></span> Answered</span>
+                        <span><span class="legend-color" style="background:#f9a825;"></span> Marked</span>
+                        <span><span class="legend-color" style="background:#1e88e5;"></span> Ans+Mark</span>
                     </div>
+                    <div class="palette-grid" id="paletteGrid"></div>
+                </div>
 
-                    <!-- Question -->
-                    <div class="question-main">
-                        <div id="questionContainer"></div>
-                        <div class="question-controls">
-                            <div class="left-btns">
-                                <button id="prevBtn" onclick="prevQuestion()" disabled><i class="fas fa-arrow-left"></i> Prev</button>
-                                <button id="markBtn" onclick="toggleMark()" class="btn-outline btn-sm"><i class="fas fa-flag"></i> Mark</button>
-                                <button id="clearBtn" onclick="clearAnswer()" class="btn-outline btn-sm" style="border-color:#c62828;color:#c62828;"><i class="fas fa-undo"></i> Clear</button>
-                            </div>
-                            <div class="flex-wrap" style="gap:10px;">
-                                <span class="progress-text" id="progressText">Q1 of 0</span>
-                                <button id="nextBtn" onclick="nextQuestion()" class="btn-sm">Next <i class="fas fa-arrow-right"></i></button>
-                                <button id="submitTestBtn" onclick="submitTest()" class="btn-sm hidden"><i class="fas fa-paper-plane"></i> Submit</button>
-                            </div>
+                <div class="question-main">
+                    <div id="questionContainer"></div>
+                    <div class="question-controls">
+                        <div class="left-btns">
+                            <button id="prevBtn" onclick="prevQuestion()" disabled><i class="fas fa-arrow-left"></i> Prev</button>
+                            <button id="markBtn" onclick="toggleMark()" class="btn-outline btn-sm"><i class="fas fa-flag"></i> Mark</button>
+                            <button id="clearBtn" onclick="clearAnswer()" class="btn-outline btn-sm" style="border-color:#c62828;color:#c62828;"><i class="fas fa-undo"></i> Clear</button>
+                        </div>
+                        <div class="flex-wrap" style="gap:10px;">
+                            <span class="progress-text" id="progressText">Q1 of 0</span>
+                            <button id="nextBtn" onclick="nextQuestion()" class="btn-sm">Next <i class="fas fa-arrow-right"></i></button>
+                            <button id="submitTestBtn" onclick="submitTest()" class="btn-sm hidden"><i class="fas fa-paper-plane"></i> Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- ======== TAB: HISTORY ======== -->
-            <div id="history-tab" class="tab-content">
-                <div class="sub-title"><i class="fas fa-calendar-alt"></i> Your Daily Points History</div>
-                <div id="historyContainer"><p><i class="fas fa-spinner fa-spin"></i> Loading…</p></div>
-            </div>
+        <!-- ======== TAB: HISTORY ======== -->
+        <div id="history-tab" class="tab-content">
+            <div class="sub-title"><i class="fas fa-calendar-alt"></i> Your Daily Points History</div>
+            <div id="historyContainer"><p><i class="fas fa-spinner fa-spin"></i> Loading…</p></div>
+        </div>
 
-            <!-- ======== TAB: ADMIN ======== -->
-            <div id="admin-tab" class="tab-content">
-                <div class="sub-title"><i class="fas fa-tools"></i> Admin Panel</div>
-                <div class="admin-grid">
-                    <!-- Add Question -->
-                    <div class="admin-card">
-                        <h5><i class="fas fa-plus-circle"></i> Add New Question</h5>
-                        <div class="form-group"><label>Date (YYYY-MM-DD)</label><input type="text" id="qDate" placeholder="2026-06-29" /></div>
-                        <div class="form-group"><label>Question</label><input type="text" id="qText" placeholder="Type question here" /></div>
-                        <div class="form-group"><label>Option A</label><input type="text" id="optA" /></div>
-                        <div class="form-group"><label>Option B</label><input type="text" id="optB" /></div>
-                        <div class="form-group"><label>Option C</label><input type="text" id="optC" /></div>
-                        <div class="form-group"><label>Option D</label><input type="text" id="optD" /></div>
-                        <div class="form-group"><label>Correct Answer (A/B/C/D)</label><input type="text" id="ans" maxlength="1" style="text-transform:uppercase;" /></div>
-                        <button class="btn-block" onclick="addQuestion()"><i class="fas fa-save"></i> Add Question</button>
-                    </div>
+        <!-- ======== TAB: ADMIN ======== -->
+        <div id="admin-tab" class="tab-content">
+            <div class="sub-title"><i class="fas fa-tools"></i> Admin Panel</div>
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h5><i class="fas fa-plus-circle"></i> Add New Question</h5>
+                    <div class="form-group"><label>Date (YYYY-MM-DD)</label><input type="text" id="qDate" placeholder="2026-06-29" /></div>
+                    <div class="form-group"><label>Question</label><input type="text" id="qText" placeholder="Type question here" /></div>
+                    <div class="form-group"><label>Option A</label><input type="text" id="optA" /></div>
+                    <div class="form-group"><label>Option B</label><input type="text" id="optB" /></div>
+                    <div class="form-group"><label>Option C</label><input type="text" id="optC" /></div>
+                    <div class="form-group"><label>Option D</label><input type="text" id="optD" /></div>
+                    <div class="form-group"><label>Correct Answer (A/B/C/D)</label><input type="text" id="ans" maxlength="1" style="text-transform:uppercase;" /></div>
+                    <button class="btn-block" onclick="addQuestion()"><i class="fas fa-save"></i> Add Question</button>
+                </div>
 
-                    <!-- Publish Time + Users -->
-                    <div class="admin-card">
-                        <h5><i class="fas fa-clock"></i> Set Result Publish Time</h5>
-                        <div class="form-group"><label>Date &amp; Time</label><input type="datetime-local" id="publishTimeInput" /></div>
-                        <button class="btn-block" onclick="setPublishTime()"><i class="fas fa-upload"></i> Update Time</button>
-
-                        <hr style="margin:24px 0; border:1px dashed #dce3f0;" />
-
-                        <h5><i class="fas fa-users"></i> All Users &amp; Ranks</h5>
-                        <div class="user-list" id="userListContainer"><p><i class="fas fa-spinner fa-spin"></i> Loading…</p></div>
-                    </div>
+                <div class="admin-card">
+                    <h5><i class="fas fa-clock"></i> Set Result Publish Time</h5>
+                    <div class="form-group"><label>Date &amp; Time</label><input type="datetime-local" id="publishTimeInput" /></div>
+                    <button class="btn-block" onclick="setPublishTime()"><i class="fas fa-upload"></i> Update Time</button>
+                    <hr style="margin:24px 0; border:1px dashed #dce3f0;" />
+                    <h5><i class="fas fa-users"></i> All Users &amp; Ranks</h5>
+                    <div class="user-list" id="userListContainer"><p><i class="fas fa-spinner fa-spin"></i> Loading…</p></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ============================================================ -->
-    <!-- JAVASCRIPT -->
-    <script>
-        // ==================== CONFIG ====================
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz8HQ-pdPJlMAK6toqJBefNRvAT1Zn1YelEWfgr1Ab9nlYDB5X9JyTLTViPdlvoYIFs/exec";
+<script>
+    // ==================== CONFIG ====================
+    // 🔥 IMPORTANT: Replace with your actual Google Apps Script Web App URL
+    const SCRIPT_URL = "YOUR_SCRIPT_URL_HERE";
 
-        let currentUser = null;
-        let questions = [];
-        let currentQuestionIndex = 0;
-        let questionStatuses = [];
-        let userAnswers = {};
-        let questionTimerInterval = null;
-        let questionTimeLeft = 60;
-        let totalQuestions = 0;
-        let testSubmitted = false;
+    let currentUser = null;
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let questionStatuses = [];
+    let userAnswers = {};
+    let questionTimerInterval = null;
+    let questionTimeLeft = 60;
+    let totalQuestions = 0;
+    let testSubmitted = false;
 
-        // ==================== UI HELPERS ====================
-        function showMessage(msg, type = 'error') {
-            const el = document.getElementById('message');
-            el.textContent = msg;
-            el.className = type;
-            clearTimeout(el._timeout);
-            el._timeout = setTimeout(() => { el.className = '';
-                el.textContent = ''; }, 6000);
-        }
+    // ==================== UI HELPERS ====================
+    function showMessage(msg, type = 'error') {
+        const el = document.getElementById('message');
+        el.textContent = msg;
+        el.className = type;
+        clearTimeout(el._timeout);
+        el._timeout = setTimeout(() => { el.className = ''; el.textContent = ''; }, 6000);
+    }
 
-        function showLogin() {
-            document.getElementById('loginForm').classList.remove('hidden');
-            document.getElementById('registerForm').classList.add('hidden');
-            document.getElementById('forgotPasswordForm').classList.add('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-        }
+    function showLogin() {
+        document.getElementById('loginForm').classList.remove('hidden');
+        document.getElementById('registerForm').classList.add('hidden');
+        document.getElementById('forgotPasswordForm').classList.add('hidden');
+        document.getElementById('dashboard').classList.add('hidden');
+    }
 
-        function showRegister() {
-            document.getElementById('loginForm').classList.add('hidden');
-            document.getElementById('registerForm').classList.remove('hidden');
-            document.getElementById('forgotPasswordForm').classList.add('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-        }
+    function showRegister() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('registerForm').classList.remove('hidden');
+        document.getElementById('forgotPasswordForm').classList.add('hidden');
+        document.getElementById('dashboard').classList.add('hidden');
+    }
 
-        function showForgotPassword() {
-            document.getElementById('loginForm').classList.add('hidden');
-            document.getElementById('registerForm').classList.add('hidden');
-            document.getElementById('forgotPasswordForm').classList.remove('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-            document.getElementById('securityQuestionContainer').classList.add('hidden');
-            document.getElementById('forgotFetchBtn').classList.remove('hidden');
-            document.getElementById('forgotUserId').value = '';
-            document.getElementById('forgotSecurityQuestion').value = '';
-            document.getElementById('forgotSecurityAnswer').value = '';
-            document.getElementById('forgotNewPassword').value = '';
-        }
+    function showForgotPassword() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('registerForm').classList.add('hidden');
+        document.getElementById('forgotPasswordForm').classList.remove('hidden');
+        document.getElementById('dashboard').classList.add('hidden');
+        document.getElementById('securityQuestionContainer').classList.add('hidden');
+        document.getElementById('forgotFetchBtn').classList.remove('hidden');
+        document.getElementById('forgotUserId').value = '';
+        document.getElementById('forgotSecurityQuestion').value = '';
+        document.getElementById('forgotSecurityAnswer').value = '';
+        document.getElementById('forgotNewPassword').value = '';
+    }
 
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            document.querySelectorAll('.tab').forEach(el => {
-                if (el.getAttribute('onclick') && el.getAttribute('onclick').includes(tabId)) {
-                    el.classList.add('active');
-                }
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        document.querySelectorAll('.tab').forEach(el => {
+            if (el.getAttribute('onclick') && el.getAttribute('onclick').includes(tabId)) {
+                el.classList.add('active');
+            }
+        });
+        if (tabId === 'history-tab') loadHistory();
+        if (tabId === 'admin-tab') loadAdminPanel();
+    }
+
+    // ==================== AUTH ====================
+    async function register() {
+        const userId = document.getElementById('regUserId').value.trim();
+        const name = document.getElementById('regName').value.trim();
+        const pass = document.getElementById('regPass').value;
+        const secQ = document.getElementById('regSecurityQuestion').value.trim();
+        const secA = document.getElementById('regSecurityAnswer').value.trim();
+        if (!userId || !name || !pass || !secQ || !secA) return showMessage('Please fill all fields');
+
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'register', userId, name, password: pass, securityQuestion: secQ, securityAnswer: secA })
             });
-            if (tabId === 'history-tab') loadHistory();
-            if (tabId === 'admin-tab') loadAdminPanel();
-        }
+            const data = await res.json();
+            if (data.status === 'success') {
+                showMessage('Registration successful! Please login.', 'success');
+                showLogin();
+                document.getElementById('loginUserId').value = userId;
+            } else { showMessage(data.message); }
+        } catch (e) { showMessage('Network error. Please try again.'); }
+    }
 
-        // ==================== AUTH ====================
-        async function register() {
-            const userId = document.getElementById('regUserId').value.trim();
-            const name = document.getElementById('regName').value.trim();
-            const pass = document.getElementById('regPass').value;
-            const secQ = document.getElementById('regSecurityQuestion').value.trim();
-            const secA = document.getElementById('regSecurityAnswer').value.trim();
-            if (!userId || !name || !pass || !secQ || !secA) return showMessage('Please fill all fields');
+    async function login() {
+        const userId = document.getElementById('loginUserId').value.trim();
+        const pass = document.getElementById('loginPass').value;
+        if (!userId || !pass) return showMessage('Please enter User ID and Password');
 
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'register', userId, name, password: pass, securityQuestion: secQ,
-                        securityAnswer: secA })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    showMessage('Registration successful! Please login.', 'success');
-                    showLogin();
-                    document.getElementById('loginUserId').value = userId;
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'login', userId, password: pass })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                currentUser = data;
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('registerForm').classList.add('hidden');
+                document.getElementById('forgotPasswordForm').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+
+                if (data.isAdmin) {
+                    document.getElementById('adminTabBtn').classList.remove('hidden');
                 } else {
-                    showMessage(data.message);
+                    document.getElementById('adminTabBtn').classList.add('hidden');
                 }
-            } catch (e) { showMessage('Network error. Please try again.'); }
-        }
+                switchTab('dashboard-tab');
+                loadDashboard();
+            } else { showMessage(data.message); }
+        } catch (e) { showMessage('Network error. Please try again.'); }
+    }
 
-        async function login() {
-            const userId = document.getElementById('loginUserId').value.trim();
-            const pass = document.getElementById('loginPass').value;
-            if (!userId || !pass) return showMessage('Please enter User ID and Password');
+    function logout() {
+        clearInterval(questionTimerInterval);
+        currentUser = null;
+        showLogin();
+        document.getElementById('loginPass').value = '';
+        document.getElementById('loginUserId').value = '';
+    }
 
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'login', userId, password: pass })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    currentUser = data;
-                    document.getElementById('loginForm').classList.add('hidden');
-                    document.getElementById('registerForm').classList.add('hidden');
-                    document.getElementById('forgotPasswordForm').classList.add('hidden');
-                    document.getElementById('dashboard').classList.remove('hidden');
+    // ==================== FORGOT PASSWORD ====================
+    async function fetchSecurityQuestion() {
+        const userId = document.getElementById('forgotUserId').value.trim();
+        if (!userId) return showMessage('Please enter User ID');
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'forgotPassword', userId })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                document.getElementById('forgotSecurityQuestion').value = data.securityQuestion;
+                document.getElementById('securityQuestionContainer').classList.remove('hidden');
+                document.getElementById('forgotFetchBtn').classList.add('hidden');
+            } else { showMessage(data.message); }
+        } catch (e) { showMessage('Network error.'); }
+    }
 
-                    if (data.isAdmin) {
-                        document.getElementById('adminTabBtn').classList.remove('hidden');
+    async function resetPassword() {
+        const userId = document.getElementById('forgotUserId').value.trim();
+        const answer = document.getElementById('forgotSecurityAnswer').value.trim();
+        const newPass = document.getElementById('forgotNewPassword').value;
+        if (!userId || !answer || !newPass) return showMessage('Please fill all fields');
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'resetPassword', userId, securityAnswer: answer, newPassword: newPass })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                showMessage('Password reset successfully! Please login.', 'success');
+                showLogin();
+                document.getElementById('loginUserId').value = userId;
+                document.getElementById('loginPass').value = '';
+            } else { showMessage(data.message); }
+        } catch (e) { showMessage('Network error.'); }
+    }
+
+    // ==================== DASHBOARD ====================
+    async function loadDashboard() {
+        if (!currentUser) return;
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'getDashboard', userId: currentUser.userId })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                document.getElementById('userName').textContent = data.name;
+                document.getElementById('totalPoints').textContent = data.points;
+                
+                // ✅ FIX: Show '—' if rank is null (i.e., no points)
+                document.getElementById('userRank').textContent = (data.rank !== null && data.rank !== undefined) ? data.rank : '—';
+
+                const resultStatus = document.getElementById('resultStatus');
+
+                if (data.alreadySubmitted) {
+                    testSubmitted = true;
+                    document.querySelector('.test-layout').innerHTML = '<p style="color:#2e7d32;padding:20px;font-weight:600;">✅ You have already submitted today\'s test.</p>';
+                    document.getElementById('questionTimer').textContent = '✅ Submitted';
+                    if (data.resultPublished && data.userScore !== null) {
+                        resultStatus.innerHTML = `<span style="color:#2e7d32;">✅ Your Score: <strong>${data.userScore}</strong></span>`;
+                    } else if (data.publishTime) {
+                        const publishDate = new Date(data.publishTime);
+                        resultStatus.innerHTML = `⏳ Your test has been submitted. Results will be published on <strong>${publishDate.toLocaleString()}</strong>. Please wait.`;
+                        startCountdownToPublish(publishDate);
                     } else {
-                        document.getElementById('adminTabBtn').classList.add('hidden');
+                        resultStatus.innerHTML = '⏳ Your test has been submitted. Results will be published soon.';
                     }
-                    switchTab('dashboard-tab');
-                    loadDashboard();
-                } else {
-                    showMessage(data.message);
+                    return;
                 }
-            } catch (e) { showMessage('Network error. Please try again.'); }
-        }
 
-        function logout() {
-            clearInterval(questionTimerInterval);
-            currentUser = null;
-            showLogin();
-            document.getElementById('loginPass').value = '';
-            document.getElementById('loginUserId').value = '';
-        }
-
-        // ==================== FORGOT PASSWORD ====================
-        async function fetchSecurityQuestion() {
-            const userId = document.getElementById('forgotUserId').value.trim();
-            if (!userId) return showMessage('Please enter User ID');
-
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'forgotPassword', userId })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    document.getElementById('forgotSecurityQuestion').value = data.securityQuestion;
-                    document.getElementById('securityQuestionContainer').classList.remove('hidden');
-                    document.getElementById('forgotFetchBtn').classList.add('hidden');
-                } else {
-                    showMessage(data.message);
+                questions = data.questions;
+                totalQuestions = questions.length;
+                if (totalQuestions === 0) {
+                    document.querySelector('.test-layout').innerHTML = '<p style="color:#2e7d32;padding:20px;font-weight:600;">✅ No new questions for today. Check back tomorrow!</p>';
+                    document.getElementById('questionTimer').textContent = '⏳ No test today';
+                    return;
                 }
-            } catch (e) { showMessage('Network error. Please try again.'); }
-        }
 
-        async function resetPassword() {
-            const userId = document.getElementById('forgotUserId').value.trim();
-            const answer = document.getElementById('forgotSecurityAnswer').value.trim();
-            const newPass = document.getElementById('forgotNewPassword').value;
-            if (!userId || !answer || !newPass) return showMessage('Please fill all fields');
+                questionStatuses = new Array(totalQuestions).fill('not-answered');
+                userAnswers = {};
+                currentQuestionIndex = 0;
+                testSubmitted = false;
 
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'resetPassword', userId, securityAnswer: answer,
-                        newPassword: newPass })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    showMessage('Password reset successfully! Please login.', 'success');
-                    showLogin();
-                    document.getElementById('loginUserId').value = userId;
-                    document.getElementById('loginPass').value = '';
-                } else {
-                    showMessage(data.message);
-                }
-            } catch (e) { showMessage('Network error. Please try again.'); }
-        }
+                showQuestion(currentQuestionIndex);
+                startQuestionTimer();
+            }
+        } catch (e) { showMessage('Failed to load dashboard.'); }
+    }
 
-        // ==================== DASHBOARD ====================
-        async function loadDashboard() {
-            if (!currentUser) return;
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'getDashboard', userId: currentUser.userId })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    document.getElementById('userName').textContent = data.name;
-                    document.getElementById('totalPoints').textContent = data.points;
-                    document.getElementById('userRank').textContent = data.rank;
-
-                    const resultStatus = document.getElementById('resultStatus');
-
-                    if (data.alreadySubmitted) {
-                        testSubmitted = true;
-                        document.querySelector('.test-layout').innerHTML =
-                            '<p style="color:#2e7d32;padding:20px;font-weight:600;">✅ You have already submitted today\'s test.</p>';
-                        document.getElementById('questionTimer').textContent = '✅ Submitted';
-                        if (data.resultPublished && data.userScore !== null) {
-                            resultStatus.innerHTML =
-                                `<span style="color:#2e7d32;">✅ Your Score: <strong>${data.userScore}</strong></span>`;
-                        } else if (data.publishTime) {
-                            const publishDate = new Date(data.publishTime);
-                            resultStatus.innerHTML =
-                                `⏳ Your test has been submitted. Results will be published on <strong>${publishDate.toLocaleString()}</strong>. Please wait.`;
-                            startCountdownToPublish(publishDate);
-                        } else {
-                            resultStatus.innerHTML = '⏳ Your test has been submitted. Results will be published soon.';
-                        }
-                        return;
-                    }
-
-                    questions = data.questions;
-                    totalQuestions = questions.length;
-                    if (totalQuestions === 0) {
-                        document.querySelector('.test-layout').innerHTML =
-                            '<p style="color:#2e7d32;padding:20px;font-weight:600;">✅ No new questions for today. Check back tomorrow!</p>';
-                        document.getElementById('questionTimer').textContent = '⏳ No test today';
-                        return;
-                    }
-
-                    questionStatuses = new Array(totalQuestions).fill('not-answered');
-                    userAnswers = {};
-                    currentQuestionIndex = 0;
-                    testSubmitted = false;
-
-                    showQuestion(currentQuestionIndex);
-                    startQuestionTimer();
-                }
-            } catch (e) { showMessage('Failed to load dashboard.'); }
-        }
-
-        // ==================== QUESTION RENDERING ====================
-        function showQuestion(index) {
-            if (index < 0 || index >= totalQuestions) return;
-            currentQuestionIndex = index;
-            const q = questions[index];
-            const container = document.getElementById('questionContainer');
-            let optsHtml = '';
-            const labels = ['A', 'B', 'C', 'D'];
-            const currentAnswer = userAnswers[q.id] || null;
-            q.options.forEach((opt, idx) => {
-                const checked = (currentAnswer === labels[idx]) ? 'checked' : '';
-                optsHtml +=
-                    `<label><input type="radio" name="q${q.id}" value="${labels[idx]}" ${checked}> ${opt}</label>`;
-            });
-            container.innerHTML = `
-              <div class="question-box">
+    // ==================== QUESTION RENDERING ====================
+    function showQuestion(index) {
+        if (index < 0 || index >= totalQuestions) return;
+        currentQuestionIndex = index;
+        const q = questions[index];
+        const container = document.getElementById('questionContainer');
+        let optsHtml = '';
+        const labels = ['A', 'B', 'C', 'D'];
+        const currentAnswer = userAnswers[q.id] || null;
+        q.options.forEach((opt, idx) => {
+            const checked = (currentAnswer === labels[idx]) ? 'checked' : '';
+            optsHtml += `<label><input type="radio" name="q${q.id}" value="${labels[idx]}" ${checked}> ${opt}</label>`;
+        });
+        container.innerHTML = `
+            <div class="question-box">
                 <p><i class="fas fa-question-circle"></i> <strong>Q${index+1}:</strong> ${q.question}</p>
                 <div class="options">${optsHtml}</div>
-              </div>
-            `;
-            container.querySelectorAll('input[type="radio"]').forEach(radio => {
-                radio.addEventListener('change', function() {
-                    userAnswers[q.id] = this.value;
-                    updateQuestionStatus(index, 'answered');
-                });
+            </div>
+        `;
+        container.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                userAnswers[q.id] = this.value;
+                updateQuestionStatus(index, 'answered');
             });
+        });
 
-            document.getElementById('progressText').textContent = `Q${index+1} of ${totalQuestions}`;
-            document.getElementById('prevBtn').disabled = (index === 0);
+        document.getElementById('progressText').textContent = `Q${index+1} of ${totalQuestions}`;
+        document.getElementById('prevBtn').disabled = (index === 0);
 
-            if (index === totalQuestions - 1) {
-                document.getElementById('nextBtn').classList.add('hidden');
-                document.getElementById('submitTestBtn').classList.remove('hidden');
-            } else {
-                document.getElementById('nextBtn').classList.remove('hidden');
-                document.getElementById('submitTestBtn').classList.add('hidden');
-            }
-
-            updatePalette();
-            resetQuestionTimer();
+        if (index === totalQuestions - 1) {
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('submitTestBtn').classList.remove('hidden');
+        } else {
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('submitTestBtn').classList.add('hidden');
         }
 
-        function nextQuestion() {
-            if (currentQuestionIndex < totalQuestions - 1) showQuestion(currentQuestionIndex + 1);
-        }
+        updatePalette();
+        resetQuestionTimer();
+    }
 
-        function prevQuestion() {
-            if (currentQuestionIndex > 0) showQuestion(currentQuestionIndex - 1);
-        }
+    function nextQuestion() {
+        if (currentQuestionIndex < totalQuestions - 1) showQuestion(currentQuestionIndex + 1);
+    }
 
-        function navigateToQuestion(index) {
-            if (index >= 0 && index < totalQuestions && !testSubmitted) showQuestion(index);
-        }
+    function prevQuestion() {
+        if (currentQuestionIndex > 0) showQuestion(currentQuestionIndex - 1);
+    }
 
-        // ==================== QUESTION STATUS ====================
-        function updateQuestionStatus(index, newStatus) {
-            const current = questionStatuses[index];
-            if (newStatus === 'answered') {
-                questionStatuses[index] = (current === 'marked') ? 'answered-marked' : 'answered';
-            } else if (newStatus === 'marked') {
-                questionStatuses[index] = (current === 'answered' || current === 'answered-marked') ? 'answered-marked' :
-                    'marked';
-            } else if (newStatus === 'not-answered') {
-                questionStatuses[index] = 'not-answered';
-            }
-            updatePalette();
-        }
+    function navigateToQuestion(index) {
+        if (index >= 0 && index < totalQuestions && !testSubmitted) showQuestion(index);
+    }
 
-        function toggleMark() {
-            if (testSubmitted) return;
-            const idx = currentQuestionIndex;
-            const current = questionStatuses[idx];
-            const hasAnswer = !!userAnswers[questions[idx].id];
-            if (current === 'marked' || current === 'answered-marked') {
-                questionStatuses[idx] = hasAnswer ? 'answered' : 'not-answered';
-            } else {
-                questionStatuses[idx] = hasAnswer ? 'answered-marked' : 'marked';
-            }
-            updatePalette();
+    function updateQuestionStatus(index, newStatus) {
+        const current = questionStatuses[index];
+        if (newStatus === 'answered') {
+            questionStatuses[index] = (current === 'marked') ? 'answered-marked' : 'answered';
+        } else if (newStatus === 'marked') {
+            questionStatuses[index] = (current === 'answered' || current === 'answered-marked') ? 'answered-marked' : 'marked';
+        } else if (newStatus === 'not-answered') {
+            questionStatuses[index] = 'not-answered';
         }
+        updatePalette();
+    }
 
-        function clearAnswer() {
-            if (testSubmitted) return;
-            const q = questions[currentQuestionIndex];
-            delete userAnswers[q.id];
-            document.querySelectorAll(`input[name="q${q.id}"]`).forEach(r => r.checked = false);
-            const current = questionStatuses[currentQuestionIndex];
-            questionStatuses[currentQuestionIndex] = (current === 'answered-marked') ? 'marked' : 'not-answered';
-            updatePalette();
-            showMessage('Answer cleared for this question.', 'info');
+    function toggleMark() {
+        if (testSubmitted) return;
+        const idx = currentQuestionIndex;
+        const current = questionStatuses[idx];
+        const hasAnswer = !!userAnswers[questions[idx].id];
+        if (current === 'marked' || current === 'answered-marked') {
+            questionStatuses[idx] = hasAnswer ? 'answered' : 'not-answered';
+        } else {
+            questionStatuses[idx] = hasAnswer ? 'answered-marked' : 'marked';
         }
+        updatePalette();
+    }
 
-        // ==================== PALETTE ====================
-        function updatePalette() {
-            const grid = document.getElementById('paletteGrid');
-            grid.innerHTML = '';
-            for (let i = 0; i < totalQuestions; i++) {
-                const btn = document.createElement('button');
-                btn.textContent = i + 1;
-                btn.className = `q-btn ${questionStatuses[i]}`;
-                if (i === currentQuestionIndex) btn.classList.add('current');
-                btn.onclick = () => navigateToQuestion(i);
-                grid.appendChild(btn);
-            }
+    function clearAnswer() {
+        if (testSubmitted) return;
+        const q = questions[currentQuestionIndex];
+        delete userAnswers[q.id];
+        document.querySelectorAll(`input[name="q${q.id}"]`).forEach(r => r.checked = false);
+        const current = questionStatuses[currentQuestionIndex];
+        questionStatuses[currentQuestionIndex] = (current === 'answered-marked') ? 'marked' : 'not-answered';
+        updatePalette();
+        showMessage('Answer cleared for this question.', 'info');
+    }
+
+    function updatePalette() {
+        const grid = document.getElementById('paletteGrid');
+        grid.innerHTML = '';
+        for (let i = 0; i < totalQuestions; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i + 1;
+            btn.className = `q-btn ${questionStatuses[i]}`;
+            if (i === currentQuestionIndex) btn.classList.add('current');
+            btn.onclick = () => navigateToQuestion(i);
+            grid.appendChild(btn);
         }
+    }
 
-        // ==================== TIMER ====================
-        function startQuestionTimer() {
-            clearInterval(questionTimerInterval);
-            questionTimeLeft = 60;
+    // ==================== TIMER ====================
+    function startQuestionTimer() {
+        clearInterval(questionTimerInterval);
+        questionTimeLeft = 60;
+        updateTimerDisplay();
+        questionTimerInterval = setInterval(() => {
+            questionTimeLeft--;
             updateTimerDisplay();
-            questionTimerInterval = setInterval(() => {
-                questionTimeLeft--;
-                updateTimerDisplay();
-                if (questionTimeLeft <= 0) {
-                    clearInterval(questionTimerInterval);
-                    if (currentQuestionIndex === totalQuestions - 1) {
-                        submitTest();
-                    } else {
-                        if (!testSubmitted) showQuestion(currentQuestionIndex + 1);
-                    }
-                }
-            }, 1000);
-        }
-
-        function resetQuestionTimer() {
-            clearInterval(questionTimerInterval);
-            questionTimeLeft = 60;
-            updateTimerDisplay();
-            questionTimerInterval = setInterval(() => {
-                questionTimeLeft--;
-                updateTimerDisplay();
-                if (questionTimeLeft <= 0) {
-                    clearInterval(questionTimerInterval);
-                    if (currentQuestionIndex === totalQuestions - 1) {
-                        submitTest();
-                    } else {
-                        if (!testSubmitted) showQuestion(currentQuestionIndex + 1);
-                    }
-                }
-            }, 1000);
-        }
-
-        function updateTimerDisplay() {
-            const el = document.getElementById('questionTimer');
-            const mins = Math.floor(questionTimeLeft / 60);
-            const secs = questionTimeLeft % 60;
-            el.innerHTML =
-                `<i class="fas fa-hourglass-half"></i> ${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
-            el.className = '';
-            if (questionTimeLeft <= 20) el.classList.add('danger');
-            else if (questionTimeLeft <= 40) el.classList.add('warning');
-        }
-
-        // ==================== SUBMIT ====================
-        async function submitTest() {
-            if (testSubmitted) return;
-            testSubmitted = true;
-            clearInterval(questionTimerInterval);
-
-            const answers = {};
-            for (const q of questions) {
-                if (userAnswers[q.id]) answers["q" + q.id] = userAnswers[q.id];
-            }
-            answers.action = 'submitTest';
-            answers.userId = currentUser.userId;
-
-            try {
-                const res = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(answers) });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    showMessage(data.message, 'success');
-                    document.querySelector('.test-layout').innerHTML =
-                        '<p style="color:#2e7d32;padding:20px;font-weight:600;">✅ Test submitted successfully!</p>';
-                    document.getElementById('questionTimer').textContent = '✅ Submitted';
-                    loadDashboard();
+            if (questionTimeLeft <= 0) {
+                clearInterval(questionTimerInterval);
+                if (currentQuestionIndex === totalQuestions - 1) {
+                    submitTest();
                 } else {
-                    showMessage(data.message);
-                    testSubmitted = false;
+                    if (!testSubmitted) showQuestion(currentQuestionIndex + 1);
                 }
-            } catch (e) {
-                showMessage('Network error. Please try again.');
+            }
+        }, 1000);
+    }
+
+    function resetQuestionTimer() {
+        clearInterval(questionTimerInterval);
+        questionTimeLeft = 60;
+        updateTimerDisplay();
+        questionTimerInterval = setInterval(() => {
+            questionTimeLeft--;
+            updateTimerDisplay();
+            if (questionTimeLeft <= 0) {
+                clearInterval(questionTimerInterval);
+                if (currentQuestionIndex === totalQuestions - 1) {
+                    submitTest();
+                } else {
+                    if (!testSubmitted) showQuestion(currentQuestionIndex + 1);
+                }
+            }
+        }, 1000);
+    }
+
+    function updateTimerDisplay() {
+        const el = document.getElementById('questionTimer');
+        const mins = Math.floor(questionTimeLeft / 60);
+        const secs = questionTimeLeft % 60;
+        el.innerHTML = `<i class="fas fa-hourglass-half"></i> ${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+        el.className = '';
+        if (questionTimeLeft <= 20) el.classList.add('danger');
+        else if (questionTimeLeft <= 40) el.classList.add('warning');
+    }
+
+    // ==================== SUBMIT ====================
+    async function submitTest() {
+        if (testSubmitted) return;
+        testSubmitted = true;
+        clearInterval(questionTimerInterval);
+
+        const answers = {};
+        for (const q of questions) {
+            if (userAnswers[q.id]) answers["q" + q.id] = userAnswers[q.id];
+        }
+        answers.action = 'submitTest';
+        answers.userId = currentUser.userId;
+
+        try {
+            const res = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(answers) });
+            const data = await res.json();
+            if (data.status === 'success') {
+                showMessage(data.message, 'success');
+                document.querySelector('.test-layout').innerHTML = '<p style="color:#2e7d32;padding:20px;font-weight:600;">✅ Test submitted successfully!</p>';
+                document.getElementById('questionTimer').textContent = '✅ Submitted';
+                loadDashboard();
+            } else {
+                showMessage(data.message);
                 testSubmitted = false;
             }
+        } catch (e) {
+            showMessage('Network error. Please try again.');
+            testSubmitted = false;
         }
+    }
 
-        // ==================== COUNTDOWN TO PUBLISH ====================
-        function startCountdownToPublish(publishDate) {
-            const el = document.getElementById('resultStatus');
-            const interval = setInterval(() => {
-                const now = new Date();
-                const diff = publishDate - now;
-                if (diff <= 0) { clearInterval(interval);
-                    loadDashboard(); return; }
-                const h = Math.floor(diff / (1000 * 60 * 60));
-                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const s = Math.floor((diff % (1000 * 60)) / 1000);
-                el.innerHTML = `⏳ Results will be published in <strong>${h}h ${m}m ${s}s</strong>`;
-            }, 1000);
-        }
+    function startCountdownToPublish(publishDate) {
+        const el = document.getElementById('resultStatus');
+        const interval = setInterval(() => {
+            const now = new Date();
+            const diff = publishDate - now;
+            if (diff <= 0) { clearInterval(interval); loadDashboard(); return; }
+            const h = Math.floor(diff / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            el.innerHTML = `⏳ Results will be published in <strong>${h}h ${m}m ${s}s</strong>`;
+        }, 1000);
+    }
 
-        // ==================== HISTORY ====================
-        async function loadHistory() {
-            if (!currentUser) return;
-            const container = document.getElementById('historyContainer');
-            container.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Loading…</p>';
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'getHistory', userId: currentUser.userId })
+    // ==================== HISTORY ====================
+    async function loadHistory() {
+        if (!currentUser) return;
+        const container = document.getElementById('historyContainer');
+        container.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Loading…</p>';
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'getHistory', userId: currentUser.userId })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.history.length > 0) {
+                let html = `<table class="history-table"><tr><th><i class="fas fa-calendar-day"></i> Date</th><th><i class="fas fa-star"></i> Score</th></tr>`;
+                data.history.forEach(h => { html += `<tr><td>${h.date}</td><td>${h.score}</td></tr>`; });
+                html += `</table>`;
+                container.innerHTML = html;
+            } else {
+                container.innerHTML = '<p style="color:#6a7fa0;">No history found. Start taking tests!</p>';
+            }
+        } catch (e) { container.innerHTML = '<p>Could not load history.</p>'; }
+    }
+
+    // ==================== ADMIN ====================
+    async function loadAdminPanel() {
+        if (!currentUser) return;
+        const container = document.getElementById('userListContainer');
+        container.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Loading…</p>';
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'getAllUsers', userId: currentUser.userId })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                let html = `<table class="history-table"><tr><th>Name</th><th>User ID</th><th>Points</th><th>Rank</th></tr>`;
+                data.users.forEach(u => {
+                    html += `<tr><td>${u.name}</td><td>${u.userId}</td><td>${u.points}</td><td>${u.rank}</td></tr>`;
                 });
-                const data = await res.json();
-                if (data.status === 'success' && data.history.length > 0) {
-                    let html =
-                        `<table class="history-table"><tr><th><i class="fas fa-calendar-day"></i> Date</th><th><i class="fas fa-star"></i> Score</th></tr>`;
-                    data.history.forEach(h => { html += `<tr><td>${h.date}</td><td>${h.score}</td></tr>`; });
-                    html += `</table>`;
-                    container.innerHTML = html;
-                } else {
-                    container.innerHTML = '<p style="color:#6a7fa0;">No history found. Start taking tests!</p>';
-                }
-            } catch (e) { container.innerHTML = '<p>Could not load history.</p>'; }
-        }
+                html += `</table>`;
+                container.innerHTML = html;
+            } else {
+                container.innerHTML = '<p>Could not load users.</p>';
+            }
 
-        // ==================== ADMIN ====================
-        async function loadAdminPanel() {
-            if (!currentUser) return;
-            const container = document.getElementById('userListContainer');
-            container.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Loading…</p>';
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'getAllUsers', userId: currentUser.userId })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    let html =
-                        `<table class="history-table"><tr><th>Name</th><th>User ID</th><th>Points</th><th>Rank</th></tr>`;
-                    data.users.forEach(u => {
-                        html += `<tr><td>${u.name}</td><td>${u.userId}</td><td>${u.points}</td><td>${u.rank}</td></tr>`;
-                    });
-                    html += `</table>`;
-                    container.innerHTML = html;
-                } else {
-                    container.innerHTML = '<p>Could not load users.</p>';
-                }
+            const sRes = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'getSettings', userId: currentUser.userId })
+            });
+            const sData = await sRes.json();
+            if (sData.status === 'success' && sData.publishTime) {
+                const d = new Date(sData.publishTime);
+                document.getElementById('publishTimeInput').value = d.toISOString().slice(0, 16);
+            }
+        } catch (e) { container.innerHTML = '<p>Could not load admin data.</p>'; }
+    }
 
-                const sRes = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'getSettings', userId: currentUser.userId })
-                });
-                const sData = await sRes.json();
-                if (sData.status === 'success' && sData.publishTime) {
-                    const d = new Date(sData.publishTime);
-                    document.getElementById('publishTimeInput').value = d.toISOString().slice(0, 16);
-                }
-            } catch (e) { container.innerHTML = '<p>Could not load admin data.</p>'; }
-        }
+    async function setPublishTime() {
+        const datetime = document.getElementById('publishTimeInput').value;
+        if (!datetime) return showMessage('Please select a date and time');
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'setPublishTime', userId: currentUser.userId, publishTime: new Date(datetime).toISOString() })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                showMessage('Publish time updated!', 'success');
+            } else { showMessage(data.message); }
+        } catch (e) { showMessage('Network error.'); }
+    }
 
-        async function setPublishTime() {
-            const datetime = document.getElementById('publishTimeInput').value;
-            if (!datetime) return showMessage('Please select a date and time');
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'setPublishTime', userId: currentUser.userId, publishTime: new Date(
-                            datetime).toISOString() })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    showMessage('Publish time updated!', 'success');
-                } else {
-                    showMessage(data.message);
-                }
-            } catch (e) { showMessage('Network error.'); }
-        }
+    async function addQuestion() {
+        const date = document.getElementById('qDate').value;
+        const question = document.getElementById('qText').value;
+        const optA = document.getElementById('optA').value;
+        const optB = document.getElementById('optB').value;
+        const optC = document.getElementById('optC').value;
+        const optD = document.getElementById('optD').value;
+        const answer = document.getElementById('ans').value.toUpperCase();
+        if (!date || !question || !optA || !optB || !optC || !optD || !answer) return showMessage('Please fill all fields');
+        try {
+            const res = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'addQuestion', userId: currentUser.userId, date, question, optA, optB, optC, optD, answer })
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                showMessage('Question added successfully!', 'success');
+                document.getElementById('qText').value = '';
+                document.getElementById('optA').value = '';
+                document.getElementById('optB').value = '';
+                document.getElementById('optC').value = '';
+                document.getElementById('optD').value = '';
+                document.getElementById('ans').value = '';
+            } else { showMessage(data.message); }
+        } catch (e) { showMessage('Network error.'); }
+    }
 
-        async function addQuestion() {
-            const date = document.getElementById('qDate').value;
-            const question = document.getElementById('qText').value;
-            const optA = document.getElementById('optA').value;
-            const optB = document.getElementById('optB').value;
-            const optC = document.getElementById('optC').value;
-            const optD = document.getElementById('optD').value;
-            const answer = document.getElementById('ans').value.toUpperCase();
-            if (!date || !question || !optA || !optB || !optC || !optD || !answer) return showMessage(
-            'Please fill all fields');
-            try {
-                const res = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'addQuestion', userId: currentUser.userId, date, question, optA, optB,
-                        optC, optD, answer })
-                });
-                const data = await res.json();
-                if (data.status === 'success') {
-                    showMessage('Question added successfully!', 'success');
-                    document.getElementById('qText').value = '';
-                    document.getElementById('optA').value = '';
-                    document.getElementById('optB').value = '';
-                    document.getElementById('optC').value = '';
-                    document.getElementById('optD').value = '';
-                    document.getElementById('ans').value = '';
-                } else {
-                    showMessage(data.message);
-                }
-            } catch (e) { showMessage('Network error.'); }
-        }
-
-        // ==================== INIT ====================
-        window.onload = showLogin;
-    </script>
-
+    // ==================== INIT ====================
+    window.onload = showLogin;
+</script>
 </body>
 </html>
